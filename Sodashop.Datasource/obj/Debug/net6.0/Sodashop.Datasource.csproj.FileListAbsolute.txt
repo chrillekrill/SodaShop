@@ -1,0 +1,12 @@
+C:\Users\Henri\source\repos\Sodashop\Sodashop.Datasource\obj\Debug\net6.0\Sodashop.Datasource.csproj.AssemblyReference.cache
+C:\Users\Henri\source\repos\Sodashop\Sodashop.Datasource\obj\Debug\net6.0\Sodashop.Datasource.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Henri\source\repos\Sodashop\Sodashop.Datasource\obj\Debug\net6.0\Sodashop.Datasource.AssemblyInfoInputs.cache
+C:\Users\Henri\source\repos\Sodashop\Sodashop.Datasource\obj\Debug\net6.0\Sodashop.Datasource.AssemblyInfo.cs
+C:\Users\Henri\source\repos\Sodashop\Sodashop.Datasource\obj\Debug\net6.0\Sodashop.Datasource.csproj.CoreCompileInputs.cache
+C:\Users\Henri\source\repos\SodaShop\Sodashop.Datasource\bin\Debug\net6.0\Sodashop.Datasource.deps.json
+C:\Users\Henri\source\repos\SodaShop\Sodashop.Datasource\bin\Debug\net6.0\Sodashop.Datasource.dll
+C:\Users\Henri\source\repos\SodaShop\Sodashop.Datasource\bin\Debug\net6.0\ref\Sodashop.Datasource.dll
+C:\Users\Henri\source\repos\SodaShop\Sodashop.Datasource\bin\Debug\net6.0\Sodashop.Datasource.pdb
+C:\Users\Henri\source\repos\SodaShop\Sodashop.Datasource\obj\Debug\net6.0\Sodashop.Datasource.dll
+C:\Users\Henri\source\repos\SodaShop\Sodashop.Datasource\obj\Debug\net6.0\ref\Sodashop.Datasource.dll
+C:\Users\Henri\source\repos\SodaShop\Sodashop.Datasource\obj\Debug\net6.0\Sodashop.Datasource.pdb

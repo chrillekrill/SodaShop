@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "85a03f3c-5e13-4c1f-83e1-f37782b639df": {
+      "ProjectGuid": "85a03f3c-5e13-4c1f-83e1-f37782b639df",
+      "DisplayName": "Sodashop.UI",
+      "ColorIndex": 0
+    },
+    "6523249e-2211-4cb9-8bb1-e54b91a52083": {
+      "ProjectGuid": "6523249e-2211-4cb9-8bb1-e54b91a52083",
+      "DisplayName": "Sodashop.Datasource",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}

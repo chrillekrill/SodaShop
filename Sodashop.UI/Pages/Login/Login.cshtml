@@ -1,0 +1,15 @@
+﻿@page
+@model Sodashop.UI.Pages.Login.LoginModel
+@{
+}
+
+<div>
+    @foreach (var item in Model.Users)
+    {
+        <p>@item.Email</p>
+    }
+    @foreach (var item in Model.Products)
+    {
+        <p>@item.ProductName</p>
+    }
+</div>

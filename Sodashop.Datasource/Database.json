@@ -1,0 +1,14 @@
+{
+  "users":[
+    {
+      "Email": "test@123.com",
+      "Password": "123"
+    }
+  ],
+  "products":[
+    {
+      "ProductName": "Fanta",
+      "ProductID": 13
+    }
+  ]
+}
