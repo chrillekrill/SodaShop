@@ -1,11 +1,11 @@
-using Sodashop.UI.DTOs;
+using Sodashop.DTO.DTOs;
 using Sodashop.UI.DataAccess;
 using Sodashop.Datasource;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<IDataAccess<UserDTO>, UserDataAccess>();
+builder.Services.AddSingleton<IUserDataAccess<UserDTO>, UserDataAccess>();
 builder.Services.AddSingleton<IDataAccess<ProductDTO>, ProductsDataAccess>();
 builder.Services.AddSingleton<SodashopDataSource>();
 builder.Services.AddRazorPages();

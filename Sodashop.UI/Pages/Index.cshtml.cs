@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Sodashop.Datasource;
 using Sodashop.UI.DataAccess;
-using Sodashop.UI.DTOs;
+using Sodashop.DTO.DTOs;
 
 
 namespace Sodashop.UI.Pages

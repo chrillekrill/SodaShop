@@ -8,7 +8,34 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Sodashop.UI.styles.css" asp-append-version="true" />
 </head>
+@{
+    string page = ViewContext.RouteData.Values["page"] as string;
+}
 <body>
+    <style>
+        .single {
+            padding: 30px 15px;
+            background: #05BDF6;
+            border: 1px solid #f0f0f0; }
+            .single h3.side-title {
+            margin: 0;
+            margin-bottom: 5px;
+            padding: 0;
+            font-size: 20px;
+            color: #FFF;
+            text-transform: uppercase; }
+
+         .single ul {
+            margin-bottom: 0; }
+            .single li a {
+            color: #FFF;
+            font-size: 14px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #f0f0f0;
+            line-height: 40px;
+            display: block;
+            text-decoration: none; }
+    </style>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background: #05BDF6">
             <div class="container">
@@ -18,17 +45,48 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    @if(page.StartsWith("/Index")) {
                     <ul class="navbar-nav flex-grow-1 justify-content-end">
                         <li class="nav-item">
                             <button style="background: #78DDFF"><a class="nav-link text-dark align-self-end" asp-area="" asp-page="/Login/Login">Login</a></button>
                         </li>
-                    </ul>
+                        </ul>
+                    }  else if(page.StartsWith("/Login"))
+                    {
+                        //Render no button on login page
+                    }
+                     else
+                    {
+                        //render logout button on every page that is not Index or login
+                        <ul class="navbar-nav flex-grow-1 justify-content-end">
+                        <li class="nav-item">
+                            <button style="background: #78DDFF"><a class="nav-link text-dark align-self-end" asp-area="" asp-page="/Index">Logout</a></button>
+                        </li>
+                        </ul>
+                    }
                 </div>
             </div>
         </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+
+            @*<div class="container">
+            <div class="row">
+            <div class="col-sm-3">
+	            <!-- Category -->
+	            <div class="single category">
+		            <h3 class="side-title">Läsk</h3>
+		            <ul class="list-unstyled">
+			            <li><a href="" title="">Fanta</a></li>
+			            <li><a href="" title="">Coca Cola</a></li>
+			            <li><a href="" title="">Sprite</a></li>
+		            </ul>
+               </div>
+            </div> 
+            </div>
+            </div>*@
+
             @RenderBody()
         </main>
     </div>

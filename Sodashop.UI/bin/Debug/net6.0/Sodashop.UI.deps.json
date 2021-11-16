@@ -9,6 +9,7 @@
       "Sodashop.UI/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
+          "Sodashop.DTO": "1.0.0",
           "Sodashop.Datasource": "1.0.0"
         },
         "runtime": {
@@ -30,6 +31,11 @@
         "runtime": {
           "Sodashop.Datasource.dll": {}
         }
+      },
+      "Sodashop.DTO/1.0.0": {
+        "runtime": {
+          "Sodashop.DTO.dll": {}
+        }
       }
     }
   },
@@ -47,6 +53,11 @@
       "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "Sodashop.Datasource/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Sodashop.DTO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

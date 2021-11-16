@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Henri\\source\\repos\\Sodashop\\Sodashop.Datasource\\Sodashop.Datasource.csproj": {}
+    "C:\\Users\\Henri\\source\\repos\\SodaShop\\Sodashop.Datasource\\Sodashop.Datasource.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Henri\\source\\repos\\Sodashop\\Sodashop.Datasource\\Sodashop.Datasource.csproj": {
+    "C:\\Users\\Henri\\source\\repos\\SodaShop\\Sodashop.Datasource\\Sodashop.Datasource.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Henri\\source\\repos\\Sodashop\\Sodashop.Datasource\\Sodashop.Datasource.csproj",
+        "projectUniqueName": "C:\\Users\\Henri\\source\\repos\\SodaShop\\Sodashop.Datasource\\Sodashop.Datasource.csproj",
         "projectName": "Sodashop.Datasource",
-        "projectPath": "C:\\Users\\Henri\\source\\repos\\Sodashop\\Sodashop.Datasource\\Sodashop.Datasource.csproj",
+        "projectPath": "C:\\Users\\Henri\\source\\repos\\SodaShop\\Sodashop.Datasource\\Sodashop.Datasource.csproj",
         "packagesPath": "C:\\Users\\Henri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Henri\\source\\repos\\Sodashop\\Sodashop.Datasource\\obj\\",
+        "outputPath": "C:\\Users\\Henri\\source\\repos\\SodaShop\\Sodashop.Datasource\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Henri\\AppData\\Roaming\\NuGet\\NuGet.Config",

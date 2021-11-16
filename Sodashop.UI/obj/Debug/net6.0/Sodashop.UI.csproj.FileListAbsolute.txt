@@ -28,3 +28,5 @@ C:\Users\Henri\source\repos\SodaShop\Sodashop.UI\bin\Debug\net6.0\Newtonsoft.Jso
 C:\Users\Henri\source\repos\SodaShop\Sodashop.UI\bin\Debug\net6.0\Sodashop.Datasource.dll
 C:\Users\Henri\source\repos\SodaShop\Sodashop.UI\bin\Debug\net6.0\Sodashop.Datasource.pdb
 C:\Users\Henri\source\repos\SodaShop\Sodashop.UI\obj\Debug\net6.0\Sodashop.UI.csproj.CopyComplete
+C:\Users\Henri\source\repos\SodaShop\Sodashop.UI\bin\Debug\net6.0\Sodashop.DTO.dll
+C:\Users\Henri\source\repos\SodaShop\Sodashop.UI\bin\Debug\net6.0\Sodashop.DTO.pdb

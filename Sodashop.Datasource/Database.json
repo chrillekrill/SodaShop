@@ -8,7 +8,13 @@
   "products":[
     {
       "ProductName": "Fanta",
-      "ProductID": 13
+      "ProductID": 13,
+      "Quantity": 35
+    },
+    {
+      "ProductName": "Fanta Exotic",
+      "ProductID": 1335,
+      "Quantity": 15
     }
   ]
 }

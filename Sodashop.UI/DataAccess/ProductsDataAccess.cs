@@ -1,5 +1,5 @@
 ﻿using Sodashop.Datasource;
-using Sodashop.UI.DTOs;
+using Sodashop.DTO.DTOs;
 
 namespace Sodashop.UI.DataAccess
 {

@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DTOs\Sodashop.DTO.csproj" />
     <ProjectReference Include="..\Sodashop.Datasource\Sodashop.Datasource.csproj" />
   </ItemGroup>
 

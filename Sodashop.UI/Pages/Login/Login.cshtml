@@ -3,13 +3,22 @@
 @{
 }
 
-<div>
-    @foreach (var item in Model.Users)
-    {
-        <p>@item.Email</p>
-    }
-    @foreach (var item in Model.Products)
-    {
-        <p>@item.ProductName</p>
-    }
+<div class="container">
+
+    <form asp-page-handler="Login">
+        <div class="form-group col-sm-3">
+            <label asp-for="user.Email">Email address:</label>
+            <input asp-for="user.Email" class="form-control" id="">
+            <label asp-for="user.Password">Password:</label>
+            <input asp-for="user.Password" class="form-control" id="" />
+            <br />
+            @if (ViewData.ModelState["Email"] != null || ViewData.ModelState["Password"] != null)
+            {
+                <span asp-validation-for="user.Email" class="alert alert-success" role="alert"></span>
+                <span asp-validation-for="user.Password" class="alert alert-success" role="alert"></span>
+            }
+            <button type="submit">Login</button>
+        </div>
+    </form>
+
 </div>
