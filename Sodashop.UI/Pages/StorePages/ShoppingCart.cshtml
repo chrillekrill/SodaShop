@@ -1,0 +1,17 @@
+﻿@page
+@model Sodashop.UI.Pages.StorePages.ShoppingCartModel
+@{
+}
+<div class="container">
+    <a style="text-decoration: none; color:white" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-page="/StorePages/FrontStore"><button style="background: #78DDFF; color:white" class="btn"> Back to store </button></a>
+    <h1>Your shopping cart</h1>
+    <ul class="list-unstyled">
+        @if (Model.ShoppingCart.CartÍtems != null)
+        {
+            @foreach (var cartItem in @Model.ShoppingCart.CartÍtems)
+            {
+                <h3><li>@cartItem.ProductName : @cartItem.Quantity</li></h3>
+            }
+        }
+    </ul>
+</div>

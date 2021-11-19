@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddSingleton<IUserDataAccess<UserDTO>, UserDataAccess>();
-builder.Services.AddSingleton<IDataAccess<ProductDTO>, ProductsDataAccess>();
+builder.Services.AddSingleton<IProductDataAccess<ProductDTO>, ProductsDataAccess>();
+builder.Services.AddSingleton<IShoppingCartDataAccess<ShoppingCartDTO>, ShoppingCartDataAccess>();
 builder.Services.AddSingleton<SodashopDataSource>();
 builder.Services.AddRazorPages();
 

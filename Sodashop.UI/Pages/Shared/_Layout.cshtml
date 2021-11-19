@@ -31,12 +31,13 @@
             color: #FFF;
             font-size: 14px;
             text-transform: uppercase;
-            border-bottom: 1px solid #f0f0f0;
+            
             line-height: 40px;
             display: block;
             text-decoration: none; }
     </style>
     <header>
+
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background: #05BDF6">
             <div class="container">
                 <a class="navbar-brand text-white" asp-area="" asp-page="/Index"><h1>Läskforall</h1></a>
@@ -48,9 +49,10 @@
                     @if(page.StartsWith("/Index")) {
                     <ul class="navbar-nav flex-grow-1 justify-content-end">
                         <li class="nav-item">
-                            <button style="background: #78DDFF"><a class="nav-link text-dark align-self-end" asp-area="" asp-page="/Login/Login">Login</a></button>
+                            <a class="nav-link text-dark align-self-end" asp-area="" asp-page="/Login/Login"><button style="background: #78DDFF; color:white" class="btn">Login</button></a>
                         </li>
                         </ul>
+
                     }  else if(page.StartsWith("/Login"))
                     {
                         //Render no button on login page
@@ -60,7 +62,7 @@
                         //render logout button on every page that is not Index or login
                         <ul class="navbar-nav flex-grow-1 justify-content-end">
                         <li class="nav-item">
-                            <button style="background: #78DDFF"><a class="nav-link text-dark align-self-end" asp-area="" asp-page="/Index">Logout</a></button>
+                            <a class="nav-link text-dark align-self-end" asp-area="" asp-page="/Index"><button style="background: #78DDFF; color:white" class="btn">Logout</button></a>
                         </li>
                         </ul>
                     }
@@ -70,30 +72,31 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            @*@if (page.StartsWith("/StorePages/FrontStore"))
+            {
+            <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    LÄSK
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <div class="single category">
+                            <ul class="list-unstyled">
+			                    <li><a >Fanta</a></li>
+			                    <li><a >Coca Cola</a></li>
+			                    <li><a >Sprite</a></li>
+		                    </ul>
+                      </div>
+                  </div>
+                </div>
 
-            @*<div class="container">
-            <div class="row">
-            <div class="col-sm-3">
-	            <!-- Category -->
-	            <div class="single category">
-		            <h3 class="side-title">Läsk</h3>
-		            <ul class="list-unstyled">
-			            <li><a href="" title="">Fanta</a></li>
-			            <li><a href="" title="">Coca Cola</a></li>
-			            <li><a href="" title="">Sprite</a></li>
-		            </ul>
-               </div>
-            </div> 
-            </div>
-            </div>*@
-
+            }*@
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - Sodashop.UI - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2021 - Sodashop - <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Privacy</a>
         </div>
     </footer>
 

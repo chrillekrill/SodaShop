@@ -28,7 +28,9 @@ namespace Sodashop.UI.Pages.Login
 
                 if (dataAccessUsers.LoginCheck(user.Email, user.Password))
                 {
-                    return RedirectToPage("/StorePages/FrontStore");
+                int cartID = dataAccessUsers.GetID(user.Email);
+
+                return RedirectToPage("/StorePages/FrontStore", new { cartID });
                 }
                 else
                 {

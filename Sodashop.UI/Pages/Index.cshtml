@@ -2,6 +2,8 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    Random r = new Random();
+    int rInt = r.Next(0, Model.Products.Count);
 }
 
 <div class="">
@@ -21,11 +23,13 @@
             </div> 
             </div>
             </div>*@
+
             <div style="width:1200px; height: 400px; background-image: linear-gradient(#7CDDFF, #05BDF6); border-radius: 30px" class="d-flex align-items-center justify-content-around">
                 <h1 style="font-size: 120px; color: white; margin-left: 20px">TASTE THE <br/> POWER</h1>
                 <div style="position: relative; text-align: center;">
-                    <img src="https://i.ibb.co/6Wqb5BM/coca-cola-can-white-background-chisinau-moldova-november-flavored-soft-drink-created-company-6414505.jpg" style="width:35%; height: 90%;" class=""/>
-                    <div style="position: absolute; top:95%; left: 50%; transform: translate(-50%, -50%); text-decoration: underline; font-weight: bold;">Coca Cola</div>
+                    <img src="@Model.Products[rInt].ProductImage" style="width:50%; height: 90%;" class=""/>
+                    <div style="position: absolute; top:110%; left: 50%; transform: translate(-50%, -50%); text-decoration: underline; font-weight: bold; font-size: 25px; color:white;">@Model.Products[rInt].ProductName</div>
+                    <div style="position: absolute; top:125%; left: 50%; transform: translate(-50%, -50%); text-decoration: underline; font-weight: bold; font-size: 15px; color:white;">Stock: @Model.Products[rInt].Stock buy now, only $@Model.Products[rInt].Price<br /> before it is gone forever!</div>
                 </div>
                 
                 
