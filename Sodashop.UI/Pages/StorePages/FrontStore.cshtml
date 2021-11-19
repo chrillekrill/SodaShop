@@ -2,6 +2,47 @@
 @model Sodashop.UI.Pages.StorePages.FrontStoreModel
 @{
 }
-<div>
-    <h1>Welcome to this exclusive store</h1>
+
+
+
+<div class="d-flex justify-content-center row">
+    <a style="text-decoration: none;" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-page="/StorePages/ShoppingCart"><button style="background: #78DDFF; width:15rem; color:white" class="btn" type="button"> Go to cart </button></a>
+    <h1 class="text-center">Welcome to the exclusive store</h1>
+
+    <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background: #78DDFF">
+                    Cart
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <div class="single category">
+                            <ul class="list-unstyled">
+                    @if(Model.ShoppingCart.CartÍtems != null)
+                    {
+                    @foreach (var cartItem in @Model.ShoppingCart.CartÍtems)
+                                {
+                                    <li>@cartItem.ProductName : @cartItem.Quantity</li>
+                                }
+                            }            
+                            <a asp-page="/StorePages/FrontStore" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-page-handler="ClearCart"> ClearCart </a>
+		                    </ul>
+                      </div>
+                  </div>
+                </div>
+    </div>
+
+    <div class="row">
+    @foreach (var product in Model.Products)
+    {
+        <div class="col-sm text-center">
+            <img src="@product.ProductImage" class="img-thumbnail" alt="@product.ProductName" />
+            <h1 class="text-center">@product.ProductName</h1>
+            <p class="text-center">$@product.Price</p>
+            <p class="text-center">Stock: @product.Stock</p>
+
+            <a style="text-decoration: none;" asp-page="/StorePages/FrontStore" asp-route-id="@product.ID" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-page-handler="AddToCart"><button style="background: #78DDFF; color:white" class="btn"> Add to cart </button></a>
+        </div>
+    }
+            
+    </div>
+
 </div>

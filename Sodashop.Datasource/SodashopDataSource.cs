@@ -6,15 +6,35 @@ namespace Sodashop.Datasource
 {
     public class SodashopDataSource
     {
-        public JObject DataProvider()
+        public string DataProviderProducts()
         {
             //var currentDirectory = System.AppDomain.CurrentDomain.BaseDirectory;
 
             var projectDirectory = Path.GetFullPath(@"..\..\");
 
-            var jsonRespone = JObject.Parse(File.ReadAllText(projectDirectory + "\\SodaShop\\Sodashop.Datasource\\Database.json"));
+            var jsonRespone = File.ReadAllText(projectDirectory + "\\SodaShop\\Sodashop.Datasource\\Products.json");
 
             return jsonRespone;
+        }
+
+        public string DataProviderUsers()
+        {
+            var projectDirectory = Path.GetFullPath(@"..\..\");
+
+            var jsonRespone = File.ReadAllText(projectDirectory + "\\SodaShop\\Sodashop.Datasource\\Users.json");
+
+            return jsonRespone;
+
+        }
+
+        public string DataProviderShoppingCarts()
+        {
+            var projectDirectory = Path.GetFullPath(@"..\..\");
+
+            var jsonRespone = File.ReadAllText(projectDirectory + "\\SodaShop\\Sodashop.Datasource\\ShoppingCarts.json");
+
+            return jsonRespone;
+
         }
     }
 }

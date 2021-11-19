@@ -15,11 +15,9 @@ namespace Sodashop.UI.DataAccess
 
         public List<UserDTO> GetAll()
         {
-            var jsonString = _dataSource.DataProvider();
+            var jsonString = _dataSource.DataProviderUsers();
 
-            //var results =  JsonConvert.DeserializeObject<List<UserDTO>>(jsonString);
-
-            var result = jsonString["users"].ToObject<List<UserDTO>>();
+            var result =  JsonConvert.DeserializeObject<List<UserDTO>>(jsonString);
 
             return result;
         }
@@ -36,6 +34,21 @@ namespace Sodashop.UI.DataAccess
             }
 
             return false;
+        }
+
+        public int GetID(string Email)
+        {
+            List<UserDTO> users = GetAll();
+
+            foreach (var user in users)
+            {
+                if (Email == user.Email)
+                {
+                    
+                    return user.UserID;
+                }
+            }
+            return 0;
         }
     }
 }
