@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eUQzUAut1MAySlU5GwlqYW/QCu9cKhv/mAwU9eqIbwcTAUeE4eZeiUObfqgscXy5vMbB+NprZh+qygR9uGZw7A==",
+  "dgSpecHash": "/vNi/+6ygyaDvWob5vN4WzaB9d/tu1dYMmOkdDKHyFMZqfRGYG8EtaqdKC5tUpOxv1Lebdx9MXtMVmI1pd536Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Henri\\source\\repos\\Sodashop\\Sodashop.Datasource\\Sodashop.Datasource.csproj",
+  "projectFilePath": "C:\\Users\\Henri\\source\\repos\\SodaShop\\Sodashop.Datasource\\Sodashop.Datasource.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Henri\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
