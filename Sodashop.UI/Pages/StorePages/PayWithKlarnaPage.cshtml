@@ -1,0 +1,16 @@
+﻿@page
+@model Sodashop.UI.Pages.StorePages.PayWithKlarnaPageModel
+@{
+    ViewBag.cartID = Model.ShoppingCart.ShoppingCartId;
+}
+
+<div class="container">
+
+<form asp-page-handler="PayWithKlarna" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-route-option="@Model.paymentOpt" asp-route-SSN="@Model.SSN">
+    <label for="ccn">Social Security Number:</label>
+    <input id="ccn" type="" asp-for="SSN" inputmode="numeric" pattern="[0-9\s]{12,12}" maxlength="12" placeholder="xxxxxxxx-xxxx">
+
+    <button type="submit">Place Order</button>
+</form>
+
+</div>

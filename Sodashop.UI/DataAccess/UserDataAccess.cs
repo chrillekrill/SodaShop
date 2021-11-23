@@ -27,7 +27,7 @@ namespace Sodashop.UI.DataAccess
             List<UserDTO> users = GetAll();
             foreach (var user in users)
             {
-                if(Email == user.Email && Password == user.Password)
+                if(user.Email.Equals(Email) && user.Password.Equals(Password))
                 {
                     return true;
                 }
@@ -49,6 +49,12 @@ namespace Sodashop.UI.DataAccess
                 }
             }
             return 0;
+        }
+        public UserDTO GetUserByID(int ID)
+        {
+            List<UserDTO> users = GetAll();
+
+            return users.Single(user => user.UserID == ID);
         }
     }
 }

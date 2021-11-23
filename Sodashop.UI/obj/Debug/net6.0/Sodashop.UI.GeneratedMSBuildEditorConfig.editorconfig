@@ -35,8 +35,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVQYWdlc1xGcm9udFN0b3JlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Henri/source/repos/SodaShop/Sodashop.UI/Pages/StorePages/PayWithCardPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVQYWdlc1xQYXlXaXRoQ2FyZFBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Henri/source/repos/SodaShop/Sodashop.UI/Pages/StorePages/PayWithKlarnaPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVQYWdlc1xQYXlXaXRoS2xhcm5hUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Henri/source/repos/SodaShop/Sodashop.UI/Pages/StorePages/PlaceOrderPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVQYWdlc1xQbGFjZU9yZGVyUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Henri/source/repos/SodaShop/Sodashop.UI/Pages/StorePages/ShoppingCart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVQYWdlc1xTaG9wcGluZ0NhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Henri/source/repos/SodaShop/Sodashop.UI/Pages/StorePages/ThankYouPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVQYWdlc1xUaGFua1lvdVBhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Henri/source/repos/SodaShop/Sodashop.UI/Pages/_ViewImports.cshtml]

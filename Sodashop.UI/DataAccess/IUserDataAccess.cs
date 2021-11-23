@@ -6,5 +6,7 @@ namespace Sodashop.UI.DataAccess
     {
         bool LoginCheck(string Email, string Password);
         int GetID(string Email);
+
+        UserDTO GetUserByID(int ID);
     }
 }

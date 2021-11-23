@@ -10,7 +10,7 @@ namespace Sodashop.DTO.DTOs
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        public int UserID { get; set; }
-
+        public int UserID { get; set; } 
+        public List<Guid> OrderNumbers { get; set; }
     }
 }

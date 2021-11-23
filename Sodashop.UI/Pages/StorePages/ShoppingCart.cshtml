@@ -1,17 +1,40 @@
 ﻿@page
 @model Sodashop.UI.Pages.StorePages.ShoppingCartModel
 @{
+    decimal totalPrice = 0.0M;
+
+    if(Model.ShoppingCart.CartÍtems != null)
+    {
+        foreach (var item in Model.ShoppingCart.CartÍtems)
+        {
+            totalPrice += (item.Price * item.Quantity);
+        } 
+    }
+
+    ViewBag.cartID = Model.ShoppingCart.ShoppingCartId;
+
 }
 <div class="container">
-    <a style="text-decoration: none; color:white" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-page="/StorePages/FrontStore"><button style="background: #78DDFF; color:white" class="btn"> Back to store </button></a>
+   
+    <a style="background: #78DDFF; color:white" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-page="/StorePages/FrontStore" class="btn align-self-center" type="button"> Back to store </a>
     <h1>Your shopping cart</h1>
     <ul class="list-unstyled">
         @if (Model.ShoppingCart.CartÍtems != null)
         {
             @foreach (var cartItem in @Model.ShoppingCart.CartÍtems)
             {
-                <h3><li>@cartItem.ProductName : @cartItem.Quantity</li></h3>
+                <li class="h3">@cartItem.ProductName : <a asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-route-productID="@cartItem.ID" asp-route-plusOrMinus='-' asp-page="/StorePages/ShoppingCart" asp-page-handler="ChangeQuantity" style="text-decoration: none;">- </a>@cartItem.Quantity <a asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-route-productID="@cartItem.ID" asp-route-plusOrMinus='+' asp-page="/StorePages/ShoppingCart" asp-page-handler="ChangeQuantity" style="text-decoration: none;">+</a> $@cartItem.Price</li>
             }
+
+            <l1 class="h3" style="text-decoration: none;">Total price: $@totalPrice</l1>
+        } else
+        {
+            <p>Maybe you should add something to the cart?</p>
         }
     </ul>
+    @if(@Model.ShoppingCart.CartÍtems != null)
+    {
+    <a style="background: #78DDFF; color:white" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-page="/StorePages/PlaceOrderPage" class="btn align-self-center" type="button"> Checkout </a>    
+    }
+    
 </div>

@@ -12,11 +12,9 @@
             <label asp-for="user.Password">Password:</label>
             <input asp-for="user.Password" class="form-control" id="" />
             <br />
-            @if (ViewData.ModelState["Email"] != null || ViewData.ModelState["Password"] != null)
-            {
-                <span asp-validation-for="user.Email" class="alert alert-success" role="alert"></span>
-                <span asp-validation-for="user.Password" class="alert alert-success" role="alert"></span>
-            }
+            <span asp-validation-for="user.Email" class="@Model.FeedBackClass" role="alert">@Model.FeedBack</span>
+            <br />
+            <br />
             <button type="submit">Login</button>
         </div>
     </form>

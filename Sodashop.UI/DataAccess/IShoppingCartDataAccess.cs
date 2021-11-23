@@ -11,5 +11,7 @@ namespace Sodashop.UI.DataAccess
         void addProduct(ProductDTO product, int cartID);
 
         void clearCart(int cartID);
+
+        void changeQuantity(int cartID, int productID, char plusOrMinus);
     }
 }
