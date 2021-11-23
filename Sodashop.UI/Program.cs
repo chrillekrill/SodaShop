@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<IUserDataAccess<UserDTO>, UserDataAccess>();
 builder.Services.AddSingleton<IProductDataAccess<ProductDTO>, ProductsDataAccess>();
 builder.Services.AddSingleton<IShoppingCartDataAccess<ShoppingCartDTO>, ShoppingCartDataAccess>();
+builder.Services.AddSingleton<IOrderDataAccess<OrderDTO>, OrderDataAccess>();
 builder.Services.AddSingleton<SodashopDataSource>();
 builder.Services.AddRazorPages();
 

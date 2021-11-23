@@ -16,7 +16,16 @@ namespace Sodashop.Datasource
 
             return jsonRespone;
         }
+        public string DataProviderOrders()
+        {
+            //var currentDirectory = System.AppDomain.CurrentDomain.BaseDirectory;
 
+            var projectDirectory = Path.GetFullPath(@"..\..\");
+
+            var jsonRespone = File.ReadAllText(projectDirectory + "\\SodaShop\\Sodashop.Datasource\\Orders.json");
+
+            return jsonRespone;
+        }
         public string DataProviderUsers()
         {
             var projectDirectory = Path.GetFullPath(@"..\..\");

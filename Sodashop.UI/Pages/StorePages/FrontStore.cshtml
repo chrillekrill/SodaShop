@@ -1,16 +1,14 @@
 ﻿@page
 @model Sodashop.UI.Pages.StorePages.FrontStoreModel
 @{
+    ViewBag.cartID = Model.CartID;
 }
 
-
-
-<div class="d-flex justify-content-center row">
-    <a style="text-decoration: none;" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-page="/StorePages/ShoppingCart"><button style="background: #78DDFF; width:15rem; color:white" class="btn" type="button"> Go to cart </button></a>
-    <h1 class="text-center">Welcome to the exclusive store</h1>
+<div class="d-flex justify-content-lg-between">
+<a style="background: #78DDFF; color:white" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-page="/StorePages/ShoppingCart" class="btn align-self-center" type="button"> Go to cart</a>
 
     <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background: #78DDFF">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background: #78DDFF">
                     Cart
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -26,10 +24,13 @@
                             <a asp-page="/StorePages/FrontStore" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-page-handler="ClearCart"> ClearCart </a>
 		                    </ul>
                       </div>
-                  </div>
-                </div>
-    </div>
+              </div>
+      </div>
+</div>
+<div class="d-flex justify-content-center">
+    <h1 class="text-center">Welcome to the exclusive store</h1>
 
+    </div>
     <div class="row">
     @foreach (var product in Model.Products)
     {
@@ -39,10 +40,9 @@
             <p class="text-center">$@product.Price</p>
             <p class="text-center">Stock: @product.Stock</p>
 
-            <a style="text-decoration: none;" asp-page="/StorePages/FrontStore" asp-route-id="@product.ID" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-page-handler="AddToCart"><button style="background: #78DDFF; color:white" class="btn"> Add to cart </button></a>
+            <a style="background: #78DDFF; color:white" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-route-id="@product.ID" asp-page="/StorePages/FrontStore" asp-page-handler="AddToCart" class="btn align-self-center" type="button"> Add to cart </a>
         </div>
     }
             
-    </div>
-
 </div>
+

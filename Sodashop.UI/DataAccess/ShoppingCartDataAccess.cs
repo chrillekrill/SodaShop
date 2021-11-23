@@ -50,6 +50,43 @@ namespace Sodashop.UI.DataAccess
 
             return Cart;
         }
+        public void changeQuantity(int cartID, int productID, char plusOrMinus)
+        {
+            var projectDirectory = Path.GetFullPath(@"..\..\");
+            var path = projectDirectory + "\\SodaShop\\Sodashop.Datasource\\ShoppingCarts.json";
+            var jsonResponse = File.ReadAllText(path);
+            var result = JsonConvert.DeserializeObject<List<ShoppingCartDTO>>(jsonResponse);
+
+            var shoppingCart = result.Single(cart => cart.ShoppingCartId == cartID);
+
+            var updatedCart = result.IndexOf(shoppingCart);
+
+            var productToUpdate = result[updatedCart].CartÍtems.SingleOrDefault(product => product.ID == productID);
+
+            var updatedProduct = result[updatedCart].CartÍtems.IndexOf(productToUpdate);
+
+            switch (plusOrMinus)
+            {
+                case '+':
+                    result[updatedCart].CartÍtems[updatedProduct].Quantity++;
+                    break;
+                case '-':
+                    if(result[updatedCart].CartÍtems[updatedProduct].Quantity > 1)
+                    {
+                        result[updatedCart].CartÍtems[updatedProduct].Quantity--;
+                    } else
+                    {
+                        result[updatedCart].CartÍtems.Remove(productToUpdate);
+                    }
+                    break;
+                default:
+                    result[updatedCart].CartÍtems[updatedProduct].Quantity = result[updatedCart].CartÍtems[updatedProduct].Quantity;
+                    break;
+            }
+            var serializedCarts = JsonConvert.SerializeObject(result);
+
+            File.WriteAllText(path, serializedCarts);
+        }
         public void addProduct(ProductDTO product, int cartID)
         {
             var projectDirectory = Path.GetFullPath(@"..\..\");

@@ -1,0 +1,40 @@
+﻿@page
+@model Sodashop.UI.Pages.StorePages.PayWithCardPageModel
+@{
+    ViewBag.cartID = Model.ShoppingCart.ShoppingCartId;
+}
+<div class="container">
+        <form asp-page-handler="PayWithCard" asp-route-CardNumber="@Model.CardNumber" asp-route-ExpNumberMM="@Model.ExpNumberMM" asp-route-ExpNumberYY="@Model.ExpNumberYY" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-route-option="@Model.paymentOpt">
+            <label for="ccn">Credit Card Number:</label>
+            <input id="ccn" type="tel" asp-for="CardNumber" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
+            <label for"expDate">Expiration date:</label>
+
+            <select asp-for="ExpNumberMM">
+                <option value=''>Month</option>
+                <option value='01'>January</option>
+                <option value='02'>February</option>
+                <option value='03'>March</option>
+                <option value='04'>April</option>
+                <option value='05'>May</option>
+                <option value='06'>June</option>
+                <option value='07'>July</option>
+                <option value='08'>August</option>
+                <option value='09'>September</option>
+                <option value='10'>October</option>
+                <option value='11'>November</option>
+                <option value='12'>December</option>
+            </select>
+            <select asp-for="ExpNumberYY">
+                <option value=''>Year</option>
+                <option value='21'>2021</option>
+                <option value='22'>2022</option>
+                <option value='23'>2023</option>
+                <option value='24'>2024</option>
+                <option value='25'>2025</option>
+            </select>
+
+            <br />
+            <button type="submit">Place Order</button>
+            
+        </form>
+    </div>

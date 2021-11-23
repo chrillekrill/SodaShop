@@ -40,7 +40,7 @@
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background: #05BDF6">
             <div class="container">
-                <a class="navbar-brand text-white" asp-area="" asp-page="/Index"><h1>Läskforall</h1></a>
+                <a class="navbar-brand text-white" asp-area="" asp-page="/StorePages/FrontStore" asp-route-cartID="@ViewData["cartID"]"><h1>Läskforall</h1></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -48,8 +48,8 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     @if(page.StartsWith("/Index")) {
                     <ul class="navbar-nav flex-grow-1 justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark align-self-end" asp-area="" asp-page="/Login/Login"><button style="background: #78DDFF; color:white" class="btn">Login</button></a>
+                        <li class="nav-item"> 
+                            <a style="background: #78DDFF; color:white; width: 5rem" asp-area="" asp-page="/Login/Login" class="btn align-self-center nav-link align-self-end" type="button"> Login </a>
                         </li>
                         </ul>
 
@@ -61,8 +61,8 @@
                     {
                         //render logout button on every page that is not Index or login
                         <ul class="navbar-nav flex-grow-1 justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark align-self-end" asp-area="" asp-page="/Index"><button style="background: #78DDFF; color:white" class="btn">Logout</button></a>
+                        <li class="nav-item">                        
+                            <a style="background: #78DDFF; color:white; width: 5rem" asp-area="" asp-page="/Index" class="btn align-self-center nav-link align-self-end" type="button"> Logout </a>
                         </li>
                         </ul>
                     }
@@ -72,24 +72,6 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            @*@if (page.StartsWith("/StorePages/FrontStore"))
-            {
-            <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    LÄSK
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <div class="single category">
-                            <ul class="list-unstyled">
-			                    <li><a >Fanta</a></li>
-			                    <li><a >Coca Cola</a></li>
-			                    <li><a >Sprite</a></li>
-		                    </ul>
-                      </div>
-                  </div>
-                </div>
-
-            }*@
             @RenderBody()
         </main>
     </div>

@@ -1,0 +1,8 @@
+﻿@page
+@model Sodashop.UI.Pages.StorePages.ThankYouPageModel
+@{
+    ViewBag.cartID = Model.ID;
+}
+<h1>Thank you for your order</h1>
+
+    <a style="background: #78DDFF; color:white" asp-page="/StorePages/FrontStore" asp-route-cartID="@Model.ID" class="btn align-self-center" type="button"> Back to the store </a>

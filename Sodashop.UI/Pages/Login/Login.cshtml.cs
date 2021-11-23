@@ -9,9 +9,11 @@ namespace Sodashop.UI.Pages.Login
     public class LoginModel : PageModel
     {
         private readonly IUserDataAccess<UserDTO> dataAccessUsers;
-
         [BindProperty]
         public UserDTO user { get; set; }
+        public string FeedBack { get; set; }
+        public string FeedBackClass { get; set; }
+        public int cartID { get; set; }
 
         public LoginModel(IUserDataAccess<UserDTO> dataAccessUsers)
         {
@@ -25,17 +27,17 @@ namespace Sodashop.UI.Pages.Login
 
         public IActionResult OnPostLogin()
         {
-
                 if (dataAccessUsers.LoginCheck(user.Email, user.Password))
                 {
-                int cartID = dataAccessUsers.GetID(user.Email);
-
-                return RedirectToPage("/StorePages/FrontStore", new { cartID });
+                    cartID = dataAccessUsers.GetID(user.Email);
+                    return RedirectToPage("/StorePages/FrontStore", new { cartID });
                 }
                 else
                 {
-                    return Page();
+                    FeedBack = "Incorrect Email or Password";
+                    FeedBackClass = "alert alert-danger";
                 }
+            return Page();
         }
     }
 }
