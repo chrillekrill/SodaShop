@@ -23,7 +23,7 @@ namespace Sodashop.UI.Pages.StorePages
         }
         public void OnGet(int cartID)
         {
-            this.CartID = CartID;
+            this.CartID = cartID;
             Products = dataAccessProducts.GetAll();
             var cartExists = dataAccessShoppingCart.GetAll().SingleOrDefault(cart => cart.ShoppingCartId == cartID);
             if(cartExists != null)

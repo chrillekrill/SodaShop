@@ -37,7 +37,7 @@ namespace Sodashop.UI.DataAccess
             return orderDTOs;
         }
 
-        public void CreateOrder(UserDTO user, ShoppingCartDTO cart, int option) {
+        public void CreateOrder(UserDTO user, ShoppingCartDTO cart, int option, string CCN) {
             var projectDirectory = Path.GetFullPath(@"..\..\");
             var path = projectDirectory + "\\SodaShop\\Sodashop.Datasource\\";
             var jsonResponseOrders = File.ReadAllText(path + "Orders.json");
@@ -45,11 +45,17 @@ namespace Sodashop.UI.DataAccess
             var resultOrders = JsonConvert.DeserializeObject<List<OrderDTO>>(jsonResponseOrders);
             var resultUsers = JsonConvert.DeserializeObject<List<UserDTO>>(jsonResponseUsers);
 
-            var indexOfUser = resultUsers.IndexOf(resultUsers.Single(userCheck => userCheck.UserID == user.UserID));
+            var userWhoOrdered = resultUsers.Single(userCheck => userCheck.UserID == user.UserID);
+            var indexOfUser = resultUsers.IndexOf(userWhoOrdered);
 
             OrderDTO newOrder = new OrderDTO();
             newOrder.OrderNumber = Guid.NewGuid();
             newOrder.OrderedItems = cart.CartÍtems;
+            newOrder.OrderPrice = cart.TotalPrice;
+            newOrder.SentToAddress = userWhoOrdered.Address;
+            newOrder.SentToName = userWhoOrdered.Name;
+            string newCCN = CCN.Substring(CCN.Length - 4);
+            newOrder.CCN = newCCN;
 
             if(option == 2)
             {
@@ -69,6 +75,18 @@ namespace Sodashop.UI.DataAccess
 
             File.WriteAllText(path + "Orders.json", serializedOrder);
             File.WriteAllText(path + "Users.json", serializedUser);
+        }
+        public void PayKlarnaOrder(Guid orderNumber)
+        {
+            var projectDirectory = Path.GetFullPath(@"..\..\");
+            var path = projectDirectory + "\\SodaShop\\Sodashop.Datasource\\Orders.json";
+            var jsonResponseOrders = File.ReadAllText(path);
+            var resultOrders = JsonConvert.DeserializeObject<List<OrderDTO>>(jsonResponseOrders);
+
+            resultOrders[resultOrders.IndexOf(resultOrders.Single(order => order.OrderNumber == orderNumber))].IsPaid = true;
+
+            var serializedOrder = JsonConvert.SerializeObject(resultOrders);
+            File.WriteAllText(path, serializedOrder);
         }
     }
 }

@@ -1,0 +1,78 @@
+﻿@page
+@model Sodashop.UI.Pages.Login.UserPageModel
+@{
+    ViewBag.cartID = Model.user.UserID;
+}
+
+<div class="container">
+    <a style="background: #78DDFF; color:white" asp-route-cartID="@Model.ID" asp-page="/StorePages/FrontStore" class="btn align-self-center" type="button"> Back to store </a>
+
+    <h1>User: @Model.user.Email</h1>
+    <h2>Address: @Model.user.Name</h2>
+    <h2>Address: @Model.user.Address</h2>
+    
+    <h2>Orders</h2>
+    @foreach (var order in Model.orders)
+    {
+        <div class="card" style="width: 40rem;">
+            <div class="card-body">
+                <h5 class="card-title">Order number: @order.OrderNumber</h5>
+                <h5 class="text-center">Sent to</h5>
+                <h5 class="text-center">@order.SentToName</h5>
+                <h5 class="text-center">@order.SentToAddress</h5>
+                    @foreach (var item in order.OrderedItems)
+                    {
+            
+                            <h3>@item.ProductName</h3>
+                            <p>Price per item: $@item.Price</p>
+                            <p>Amount: @item.Quantity</p>
+           
+                    }
+                <p>total cost: $@order.OrderPrice</p>
+                @if (!order.IsPaid)
+                {
+                    <p>Order is ready to be paid</p>
+                    <a class="btn btn-success" type="button" asp-page="/Login/UserPage" asp-route-userID="@Model.user.UserID" asp-route-orderNumber="@order.OrderNumber" asp-page-handler="Pay"> Pay with Klarna </a>
+                } else
+                {
+                    <p>Order was paid with @order.PaidWith</p> 
+                }
+            </div>
+        </div>
+        <br />
+    }
+    <h2>Receipts</h2>
+    @foreach (var receipt in Model.orders)
+    {
+        if(receipt.IsPaid)
+        {
+            <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">LäskForAll</h5>
+                <span>----------------------------------</span>
+                    @foreach (var item in receipt.OrderedItems)
+                    {
+                            <div >
+                                <h3>@item.ProductName</h3>
+                                <p class="">Price per item: $@item.Price</p>
+                            </div>
+                                <p>Amount: @item.Quantity</p>
+                            
+                    }
+                    <span>----------------------------------</span>
+                <p>total cost: $@receipt.OrderPrice</p>
+                <br/>
+                @if(receipt.PaidWith == "Debit Card")
+                    {
+                        <p>Paid with Debit card</p>
+                        <p>xxxx xxxx xxxx @receipt.CCN</p>
+                    } else
+                    {
+                        <p>Paid with Klarna</p>
+                    }
+            </div>
+        </div>
+        <br />
+        }
+    }
+</div>

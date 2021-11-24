@@ -21,20 +21,30 @@
     <ul class="list-unstyled">
         @if (Model.ShoppingCart.CartÍtems != null)
         {
+            @if(Model.ShoppingCart.CartÍtems.Count >= 1)
+            {
             @foreach (var cartItem in @Model.ShoppingCart.CartÍtems)
             {
                 <li class="h3">@cartItem.ProductName : <a asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-route-productID="@cartItem.ID" asp-route-plusOrMinus='-' asp-page="/StorePages/ShoppingCart" asp-page-handler="ChangeQuantity" style="text-decoration: none;">- </a>@cartItem.Quantity <a asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-route-productID="@cartItem.ID" asp-route-plusOrMinus='+' asp-page="/StorePages/ShoppingCart" asp-page-handler="ChangeQuantity" style="text-decoration: none;">+</a> $@cartItem.Price</li>
             }
+                <l1 class="h3" style="text-decoration: none;">Total price: $@totalPrice</l1>
 
-            <l1 class="h3" style="text-decoration: none;">Total price: $@totalPrice</l1>
+            } else
+            {
+                <p>Maybe you should add something to the cart?</p>
+            }
         } else
         {
             <p>Maybe you should add something to the cart?</p>
         }
     </ul>
-    @if(@Model.ShoppingCart.CartÍtems != null)
+    @if (Model.ShoppingCart.CartÍtems != null)
     {
-    <a style="background: #78DDFF; color:white" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-page="/StorePages/PlaceOrderPage" class="btn align-self-center" type="button"> Checkout </a>    
+        @if (Model.ShoppingCart.CartÍtems.Count >= 1)
+        {
+            <a style="background: #78DDFF; color:white" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-page="/StorePages/PlaceOrderPage" class="btn align-self-center" type="button"> Checkout </a>
+        }
+
     }
-    
+
 </div>

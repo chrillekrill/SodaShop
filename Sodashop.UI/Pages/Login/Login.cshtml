@@ -12,7 +12,7 @@
             <label asp-for="user.Password">Password:</label>
             <input asp-for="user.Password" class="form-control" id="" />
             <br />
-            <span asp-validation-for="user.Email" class="@Model.FeedBackClass" role="alert">@Model.FeedBack</span>
+            <span asp-validation-for="user.Email" asp-validation-for="user.Password" class="@Model.FeedBackClass" role="alert">@Model.FeedBack</span>
             <br />
             <br />
             <button type="submit">Login</button>

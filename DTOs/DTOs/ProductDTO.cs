@@ -28,6 +28,15 @@
                     case 1335:
                         ProductImage = @"https://i.ibb.co/b39FCzt/5000112637977-1554603683787-master-axfood-400.jpg";
                         break;
+                    case 23:
+                        ProductImage = @"https://i.ibb.co/kcMyZRg/07310401007168-jpg-master-axfood-400.jpg";
+                        break;
+                    case 30:
+                        ProductImage = @"https://i.ibb.co/r7FWCrS/7310401034560-1523148355698-master-axfood-400.jpg";
+                        break;
+                    case 31:
+                        ProductImage = @"https://i.ibb.co/XFPmCm3/7310401007151-1529590849239-master-axfood-400.jpg";
+                        break;
                     default:
                         ProductImage = "Image not found";
                         break;
