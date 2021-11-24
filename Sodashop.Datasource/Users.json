@@ -1,1 +1,45 @@
-[{"Email":"test@123.com","Password":"123","UserID":1,"OrderNumbers":["a51e77de-0ef7-4f4d-b2f1-ed210bef56a3","99ddfc50-ee13-4ad5-b575-5070d3837bf9"],"Address":"Grove street 1","Name":"Test Testsson"},{"Email":"test@1234.com","Password":"123","UserID":2,"OrderNumbers":null,"Address":"Grove street 2","Name":"Best Testsson"},{"Email":"test@1235.com","Password":"123","UserID":3,"OrderNumbers":null,"Address":"Grove street 3","Name":"Hest Testsson"}]
+[
+  {
+    "Email": "test@123.com",
+    "Password": "123",
+    "UserID": 1,
+    "OrderNumbers": [
+      "a51e77de-0ef7-4f4d-b2f1-ed210bef56a3",
+      "99ddfc50-ee13-4ad5-b575-5070d3837bf9"
+    ],
+    "Address": "Grove street 1",
+    "Name": "Test Testsson"
+  },
+  {
+    "Email": "test@1234.com",
+    "Password": "123",
+    "UserID": 2,
+    "OrderNumbers": null,
+    "Address": "Grove street 2",
+    "Name": "Best Testsson"
+  },
+  {
+    "Email": "test@1235.com",
+    "Password": "123",
+    "UserID": 3,
+    "OrderNumbers": null,
+    "Address": "Grove street 3",
+    "Name": "Hest Testsson"
+  },
+  {
+    "Email": "kalle@hotmail.com",
+    "Password": "kalle123",
+    "UserID": 4,
+    "OrderNumbers": null,
+    "Address": "Grove street 4",
+    "Name": "Kalle Svensson"
+  },
+  {
+    "Email": "rafael@gmail.com",
+    "Password": "123",
+    "UserID": 5,
+    "OrderNumbers": null,
+    "Address": "Somewhere far far away",
+    "Name": "Rafael Rafaelsson"
+  }
+]

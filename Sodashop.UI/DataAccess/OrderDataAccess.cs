@@ -26,13 +26,16 @@ namespace Sodashop.UI.DataAccess
 
             foreach (var order in orders)
             {
-                foreach(var orderNum in userOrders)
+                if(userOrders != null)
                 {
-                    if(orderNum == order.OrderNumber)
+                    foreach (var orderNum in userOrders)
                     {
-                        orderDTOs.Add(order);
+                        if (orderNum == order.OrderNumber)
+                        {
+                            orderDTOs.Add(order);
+                        }
                     }
-                }
+                }  
             }
             return orderDTOs;
         }
