@@ -4,9 +4,11 @@
     ViewBag.cartID = Model.ShoppingCart.ShoppingCartId;
 }
 <div class="container">
-        <form asp-page-handler="PayWithCard" asp-route-CardNumber="@Model.CardNumber" asp-route-ExpNumberMM="@Model.ExpNumberMM" asp-route-ExpNumberYY="@Model.ExpNumberYY" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-route-option="@Model.paymentOpt">
+        <form asp-page-handler="PayWithCard" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-route-paymentOpt="@Model.paymentOpt">
             <label for="ccn">Credit Card Number:</label>
             <input id="ccn" type="tel" asp-for="CardNumber" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
+            <label for="sn">Security Number:</label>
+            <input id="sn" type="tel" asp-for="SecurityNumber" inputmode="numeric" pattern="[0-9\s]{3,3}" autocomplete="cc-number" maxlength="3" placeholder="xxx">
             <label for"expDate">Expiration date:</label>
 
             <select asp-for="ExpNumberMM">
@@ -35,6 +37,6 @@
 
             <br />
             <button type="submit">Place Order</button>
-            
+            <span asp-validation-for="@Model.CardNumber" asp-validation-for="@Model.SecurityNumber" class="@Model.FeedBackClass" role="alert">@Model.FeedBack</span>
         </form>
     </div>

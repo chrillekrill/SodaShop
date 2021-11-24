@@ -31,17 +31,17 @@
     <h1 class="text-center">Welcome to the exclusive store</h1>
 
     </div>
-    <div class="row">
+    <div class="row justify-content-md-center">
     @foreach (var product in Model.Products)
     {
-        <div class="col-sm text-center">
-            <img src="@product.ProductImage" class="img-thumbnail" alt="@product.ProductName" />
-            <h1 class="text-center">@product.ProductName</h1>
-            <p class="text-center">$@product.Price</p>
-            <p class="text-center">Stock: @product.Stock</p>
+            <div class="col-4 text-center">
+                <img src="@product.ProductImage" class="img-thumbnail" alt="@product.ProductName" />
+                <h1 class="text-center">@product.ProductName</h1>
+                <p class="text-center">$@product.Price</p>
+                <p class="text-center">Stock: @product.Stock</p>
 
-            <a style="background: #78DDFF; color:white" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-route-id="@product.ID" asp-page="/StorePages/FrontStore" asp-page-handler="AddToCart" class="btn align-self-center" type="button"> Add to cart </a>
-        </div>
+                <a style="background: #78DDFF; color:white; margin-bottom:5px" asp-route-cartID="@Model.ShoppingCart.ShoppingCartId" asp-route-id="@product.ID" asp-page="/StorePages/FrontStore" asp-page-handler="AddToCart" class="btn align-self-center" type="button"> Add to cart </a>
+            </div>
     }
             
 </div>

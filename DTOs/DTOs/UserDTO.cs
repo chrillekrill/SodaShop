@@ -12,5 +12,7 @@ namespace Sodashop.DTO.DTOs
         public string Password { get; set; }
         public int UserID { get; set; } 
         public List<Guid> OrderNumbers { get; set; }
+        public string Address { get; set; }
+        public string Name { get; set; }
     }
 }

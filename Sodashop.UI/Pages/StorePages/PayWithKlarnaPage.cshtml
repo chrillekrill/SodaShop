@@ -11,6 +11,8 @@
     <input id="ccn" type="" asp-for="SSN" inputmode="numeric" pattern="[0-9\s]{12,12}" maxlength="12" placeholder="xxxxxxxx-xxxx">
 
     <button type="submit">Place Order</button>
+
+    <span asp-validation-for="@Model.SSN" class="@Model.FeedBackClass" role="alert">@Model.FeedBack</span>
 </form>
 
 </div>

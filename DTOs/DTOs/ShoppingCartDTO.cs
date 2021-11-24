@@ -10,6 +10,7 @@ namespace Sodashop.DTO.DTOs
     {
         public List<ProductDTO> CartÍtems { get; set; }
         public int ShoppingCartId { get; set; }
+        public decimal TotalPrice { get; set; }
 
         public ShoppingCartDTO()
         {

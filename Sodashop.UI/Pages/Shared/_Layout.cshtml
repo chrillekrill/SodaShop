@@ -40,7 +40,11 @@
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background: #05BDF6">
             <div class="container">
-                <a class="navbar-brand text-white" asp-area="" asp-page="/StorePages/FrontStore" asp-route-cartID="@ViewData["cartID"]"><h1>Läskforall</h1></a>
+                @if(page.StartsWith("/StorePages")) {
+                    <a class="navbar-brand text-white" asp-area="" asp-page="/StorePages/FrontStore" asp-route-cartID="@ViewData["cartID"]"><h1>Läskforall</h1></a>
+                } else {
+                    <a class="navbar-brand text-white" asp-area="" asp-page="/Index"><h1>Läskforall</h1></a>
+                }
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -58,11 +62,14 @@
                         //Render no button on login page
                     }
                      else
-                    {
+                    {  
                         //render logout button on every page that is not Index or login
                         <ul class="navbar-nav flex-grow-1 justify-content-end">
-                        <li class="nav-item">                        
-                            <a style="background: #78DDFF; color:white; width: 5rem" asp-area="" asp-page="/Index" class="btn align-self-center nav-link align-self-end" type="button"> Logout </a>
+                        <li class="nav-item d-flex justify-content-around">
+                            @if(page.StartsWith("/StorePages")){
+                                <a style="background: #78DDFF; color:white; width: 5rem" asp-area="" asp-page="/Login/UserPage" asp-route-userID="@ViewData["cartID"]" class="btn align-self-center nav-link align-self-end" type="button"> Profile </a>
+                            }
+                            <a style="background: #78DDFF; color:white; width: 5rem; margin-left:5px" asp-area="" asp-page="/Index" class="btn align-self-center nav-link align-self-end" type="button"> Logout </a>
                         </li>
                         </ul>
                     }

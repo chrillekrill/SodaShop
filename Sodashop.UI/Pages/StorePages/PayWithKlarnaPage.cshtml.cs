@@ -12,6 +12,8 @@ namespace Sodashop.UI.Pages.StorePages
         private readonly IOrderDataAccess<OrderDTO> dataAccessOrder;
 
         public ShoppingCartDTO ShoppingCart { get; set; }
+        public string FeedBack { get; set; }
+        public string FeedBackClass { get; set; }
         public UserDTO User { get; set; }
         public int paymentOpt { get; set; }
         [BindProperty]
@@ -38,13 +40,15 @@ namespace Sodashop.UI.Pages.StorePages
                 ShoppingCart = dataAccessShoppingCart.getShoppingCart(cartID);
                 User = dataAccessUser.GetUserByID(cartID);
 
-                dataAccessOrder.CreateOrder(User, ShoppingCart, option);
+                dataAccessOrder.CreateOrder(User, ShoppingCart, option, SSN);
                 dataAccessShoppingCart.clearCart(cartID);
 
                 return RedirectToPage("/StorePages/ThankYouPage", new { ID = ShoppingCart.ShoppingCartId });
             }
             ShoppingCart = dataAccessShoppingCart.getShoppingCart(cartID);
             User = dataAccessUser.GetUserByID(cartID);
+            FeedBack = "Please write a valid social security number";
+            FeedBackClass = "alert alert-danger";
             return Page();
         }
     }

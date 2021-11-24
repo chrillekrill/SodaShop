@@ -69,14 +69,17 @@ namespace Sodashop.UI.DataAccess
             {
                 case '+':
                     result[updatedCart].CartÍtems[updatedProduct].Quantity++;
+                    result[updatedCart].TotalPrice += productToUpdate.Price;
                     break;
                 case '-':
                     if(result[updatedCart].CartÍtems[updatedProduct].Quantity > 1)
                     {
                         result[updatedCart].CartÍtems[updatedProduct].Quantity--;
+                        result[updatedCart].TotalPrice -= productToUpdate.Price;
                     } else
                     {
                         result[updatedCart].CartÍtems.Remove(productToUpdate);
+                        result[updatedCart].TotalPrice -= productToUpdate.Price;
                     }
                     break;
                 default:
@@ -127,9 +130,11 @@ namespace Sodashop.UI.DataAccess
                     Price = product.Price,
                     Quantity = product.Quantity + 1
                 });
+                result[updatedCart].TotalPrice += product.Price;
             } else
             {
                 products.Single(item => item.ProductID == product.ProductID).Quantity++;
+                result[updatedCart].TotalPrice += product.Price;
             }
                 
             
@@ -157,6 +162,7 @@ namespace Sodashop.UI.DataAccess
             //List<ProductDTO> clearedList = new List<ProductDTO>();
 
             result[updatedCart].CartÍtems = null;
+            result[updatedCart].TotalPrice = 0.0M;
 
             var serializedCarts = JsonConvert.SerializeObject(result);
 

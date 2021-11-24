@@ -15,21 +15,24 @@ namespace Sodashop.UI.Pages.StorePages
         [BindProperty]
         public ShoppingCartDTO ShoppingCart { get; set; }
         public UserDTO User { get; set; }
+        public string FeedBack { get; set; }
+        public string FeedBackClass { get; set; }
         [BindProperty]
-        public string ErrorMessage{ get; set; }
-
-        [BindProperty]
-        [Required(ErrorMessage = "Card Number is required")]
+        [Required]
         public string CardNumber { get; set; }
         [BindProperty]
-        [Required(ErrorMessage = "expiration year is required")]
+        [Required]
+        public string SecurityNumber { get; set; }
+        [BindProperty]
+        [Required]
         public string ExpNumberYY { get; set; }
         [BindProperty]
-        [Required(ErrorMessage = "expiration month is required")]
+        [Required]
         public string ExpNumberMM { get; set; }
         public string ExpNumber { get; set; }
         [BindProperty]
         public int paymentOpt { get; set; }
+        public int cartID { get; set; }
         public PayWithCardPageModel(IShoppingCartDataAccess<ShoppingCartDTO> dataAccessShoppingCart, IUserDataAccess<UserDTO> userDataAccess, IOrderDataAccess<OrderDTO> dataAccessOrder)
         {
             this.dataAccessShoppingCart = dataAccessShoppingCart;
@@ -41,27 +44,24 @@ namespace Sodashop.UI.Pages.StorePages
             ShoppingCart = dataAccessShoppingCart.getShoppingCart(cartID);
             User = dataAccessUser.GetUserByID(cartID);
             this.paymentOpt = paymentOpt;
+            this.cartID = cartID;
         }
-        public IActionResult OnPostPayWithCard(string CardNumber, string ExpNumberMM, string ExpNumberYY, int cartID, int option)
+        public IActionResult OnPostPayWithCard(int cartID, int paymentOpt)
         {
             if (ModelState.IsValid)
             {
-                this.CardNumber = CardNumber;
-                this.ExpNumberMM = ExpNumberMM;
-                this.ExpNumberYY = ExpNumberYY;
-
-                ExpNumber = ExpNumberMM + "/" + ExpNumberYY;
-
                 ShoppingCart = dataAccessShoppingCart.getShoppingCart(cartID);
                 User = dataAccessUser.GetUserByID(cartID);
 
-                dataAccessOrder.CreateOrder(User, ShoppingCart, option);
+                dataAccessOrder.CreateOrder(User, ShoppingCart, paymentOpt, CardNumber);
                 dataAccessShoppingCart.clearCart(cartID);
 
                 return RedirectToPage("/StorePages/ThankYouPage", new { ID = ShoppingCart.ShoppingCartId });
             }
             ShoppingCart = dataAccessShoppingCart.getShoppingCart(cartID);
             User = dataAccessUser.GetUserByID(cartID);
+            FeedBack = "Please write a valid card number";
+            FeedBackClass = "alert alert-danger";
             return Page();
         }
     }
