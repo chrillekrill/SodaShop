@@ -38,7 +38,9 @@
     "Email": "rafael@gmail.com",
     "Password": "123",
     "UserID": 5,
-    "OrderNumbers": null,
+    "OrderNumbers": [
+      "ca2e22ee-3478-490f-afca-8dfa3bbbdb8f"
+    ],
     "Address": "Somewhere far far away",
     "Name": "Rafael Rafaelsson"
   }

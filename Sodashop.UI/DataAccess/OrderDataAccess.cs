@@ -69,7 +69,10 @@ namespace Sodashop.UI.DataAccess
                 newOrder.PaidWith = "Klarna";
                 newOrder.IsPaid = false;
             }
-
+            if(resultUsers[indexOfUser].OrderNumbers == null)
+            {
+                resultUsers[indexOfUser].OrderNumbers = new List<Guid>();
+            }
             resultUsers[indexOfUser].OrderNumbers.Add(newOrder.OrderNumber);
             resultOrders.Add(newOrder);
 
